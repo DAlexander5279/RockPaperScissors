@@ -105,7 +105,7 @@ function game(){
         playerSelection = prompt("Rock, Paper, or Scissors")
         roundResult = playRound(playerSelection, computerSelection)
         console.log("Player chose " + playerSelection + " Computer Chose "+ computerSelection)
-        console.log(roundResult)
+    
         switch(roundResult)
         {
             case 0:
