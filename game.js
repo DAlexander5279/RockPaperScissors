@@ -42,9 +42,9 @@ function playRound(playerSelection, computerSelection){
 
 
         case "paper":
-            switch(computerSelection){
+            switch(c){
                 case "rock":
-                        return 1
+                    return 1
                     break;
 
                 case "paper":
@@ -65,7 +65,7 @@ function playRound(playerSelection, computerSelection){
 
 
         case "scissors":
-            switch(computerSelection){
+            switch(c){
                 case "rock":
                     return 2
                     break;
@@ -105,6 +105,7 @@ function game(){
         playerSelection = prompt("Rock, Paper, or Scissors")
         roundResult = playRound(playerSelection, computerSelection)
         console.log("Player chose " + playerSelection + " Computer Chose "+ computerSelection)
+        console.log(roundResult)
         switch(roundResult)
         {
             case 0:
