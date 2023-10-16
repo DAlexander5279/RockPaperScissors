@@ -22,15 +22,15 @@ function playRound(playerSelection, computerSelection){
         case "rock":
             switch(c){
                 case "rock":
-                        return "Draw!"
+                        return 0
                     break;
 
                 case "paper":
-                        return "Paper beats rock, you lose!"
+                        return 2
                     break;
 
                 case "scissors":
-                        return "rock beats scissors, you win!"
+                        return 1
                     break;
             }
 
@@ -44,15 +44,15 @@ function playRound(playerSelection, computerSelection){
         case "paper":
             switch(computerSelection){
                 case "rock":
-                        return "Paper beats rock, you win!"
+                        return 1
                     break;
 
                 case "paper":
-                    return "Draw!"
+                    return 0
                     break;
 
                 case "scissors":
-                    return "scissors beats paper, you lose!"
+                    return 2
                     break;
             }
 
@@ -67,15 +67,15 @@ function playRound(playerSelection, computerSelection){
         case "scissors":
             switch(computerSelection){
                 case "rock":
-                    return "rock beats scissors, you lose!"
+                    return 2
                     break;
 
                 case "paper":
-                    return "scissors beats paper, you lose!"
+                    return 1
                     break;
 
                 case "scissors":
-                    return "Draw!"
+                    return 0
                     break;
             }
             break;
@@ -89,6 +89,47 @@ function playRound(playerSelection, computerSelection){
     
     
 }
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+
+
+
+function game(){
+    let computerScore = 0
+    let playerScore = 0
+    let rounds = 1
+    let roundResult = 0
+    let computerSelection = null
+    let playerSelection = null
+    while(rounds <= 5)
+    {
+        computerSelection = getComputerChoice()
+        playerSelection = prompt("Rock, Paper, or Scissors")
+        roundResult = playRound(playerSelection, computerSelection)
+        console.log("Player chose " + playerSelection + " Computer Chose "+ computerSelection)
+        switch(roundResult)
+        {
+            case 0:
+                console.log("Draw!")
+                break;
+            case 1:
+                console.log("Player Wins!")
+                playerScore++
+                break;
+            case 2:
+                console.log("Computer Wins!")
+                computerScore++
+                break;
+        }
+
+        
+        rounds++
+    }
+
+
+    if(playerScore > computerScore){
+        console.log("Player Won the Game!!!")
+    }
+    else{
+        console.log("Computer won the game!")
+    }
+
+}
