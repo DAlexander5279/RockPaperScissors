@@ -129,6 +129,9 @@ function game(){
     if(playerScore > computerScore){
         console.log("Player Won the Game!!!")
     }
+    else if(playerScore == computerScore){
+        console.log("Game is a Draw!")
+    }
     else{
         console.log("Computer won the game!")
     }
